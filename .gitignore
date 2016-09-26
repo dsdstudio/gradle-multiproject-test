@@ -1,0 +1,12 @@
+.gradle
+.settings
+.idea
+build
+
+.project
+.classpath
+
+node_modules
+nodejs
+
+.generated
