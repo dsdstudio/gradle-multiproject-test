@@ -1,0 +1,22 @@
+{
+  "name": "web-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^3.10.8"
+  },
+  "devDependencies": {
+    "forever": "^0.15.2",
+    "node-sass": "^3.10.0",
+    "nodemon": "^1.10.2"
+  },
+  "scripts": {
+    "sass:compile": "node-sass --recursive --output css --source-map true --source-map-contents sass",
+    "sass:watch": "nodemon --watch sass --ext sass,scss --exec 'npm run sass:compile'",
+    "sass:watch:start": "forever start -c \"npm run sass:watch\" ./",
+    "sass:watch:stop": "forever stop ./"
+  },
+  "author": "",
+  "license": "ISC"
+}
