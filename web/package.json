@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "npm": "^3.10.8"
-  },
   "devDependencies": {
     "forever": "^0.15.2",
     "node-sass": "^3.10.0",
