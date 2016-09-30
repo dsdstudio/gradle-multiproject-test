@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.4.1.RELEASE'
+        springBootVersion = '1.3.3.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -37,6 +37,7 @@ project(':web') {
 	apply plugin: 'java'
     apply plugin: 'spring-boot'
 	apply plugin: 'eclipse'
+    apply plugin: 'spring-boot'
     apply plugin: 'propdeps'
     apply plugin: 'propdeps-maven'
     apply plugin: 'propdeps-idea'
@@ -46,12 +47,11 @@ project(':web') {
     dependencies {
         compile 'org.springframework.boot:spring-boot-starter'
         compile 'org.springframework.boot:spring-boot-starter-web'
-        compile 'org.springframework.boot:spring-boot-starter-mustache'
         compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+        runtime('org.springframework.boot:spring-boot-starter-tomcat')
         testCompile 'org.springframework.boot:spring-boot-starter-test'
-        runtime 'org.springframework.boot:spring-boot-starter-tomcat'
 
-        runtime 'com.h2database:h2'
+        runtime('com.h2database:h2')
         compile 'com.zaxxer:HikariCP:2.4.4'
         compile 'org.projectlombok:lombok:1.16.8'
 
@@ -75,8 +75,10 @@ project(':web') {
 	}
     node {
         version = '6.6.0'
+        //npmVersion = '3.10.8'
+
         distBaseUrl = 'https://nodejs.org/dist'
-        download = true
+		download = true
 
 		workDir = file("${projectDir}/nodejs")
 		nodeModulesDir = file("${projectDir}/node_modules")
@@ -94,7 +96,8 @@ project(':web') {
 	}
 
 	processResources.dependsOn sassCompile
-	bootRun.dependsOn  sassCompile
+//	bootRun.dependsOn sassWatchStart
+//	bootRun.finalizedBy sassWatchStop
 }
 project(':common') {
 	apply plugin: 'java'
@@ -118,5 +121,5 @@ project(':common') {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.1'
+    gradleVersion = '3.0'
 }
