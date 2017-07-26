@@ -2,6 +2,7 @@
 .settings
 .idea
 build
+out
 
 .project
 .classpath

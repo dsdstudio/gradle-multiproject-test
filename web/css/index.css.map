@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "index.css",
+	"sources": [
+		"../sass/index.scss"
+	],
+	"sourcesContent": [
+		"body {\n\tfont-size:12px;\n\tborder:0;\n\tmargin:0;\n\tpadding:0;\n}\n"
+	],
+	"mappings": "AAAA,AAAA,IAAI,CAAC;EACJ,SAAS,EAAC,IAAK;EACf,MAAM,EAAC,CAAE;EACT,MAAM,EAAC,CAAE;EACT,OAAO,EAAC,CAAE,GACV",
+	"names": []
+}
